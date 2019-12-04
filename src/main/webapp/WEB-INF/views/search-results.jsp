@@ -26,7 +26,9 @@
 			</tr>
 			<c:forEach var="r" items="${results.results }">
 			<tr>
-				<td>${r.title }</td>
+				<td>
+				<a href="show-movie-details?id=${r.id }">${r.title }</a>
+				</td>
 				<td>${r.release_date }</td>
 			</tr>
 			</c:forEach>

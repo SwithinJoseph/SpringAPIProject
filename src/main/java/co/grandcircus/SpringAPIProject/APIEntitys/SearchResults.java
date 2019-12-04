@@ -6,11 +6,11 @@ public class SearchResults {
 	private int page;
 	private int total_results;
 	private int totalPages;
-	private ArrayList<MovieFromAPI> results;
+	private ArrayList<MoviePartDeets> results;
 	
 	public SearchResults() {}
 
-	public SearchResults(int page, int total_results, int totalPages, ArrayList<MovieFromAPI> results) {
+	public SearchResults(int page, int total_results, int totalPages, ArrayList<MoviePartDeets> results) {
 		super();
 		this.page = page;
 		this.total_results = total_results;
@@ -42,11 +42,11 @@ public class SearchResults {
 		this.totalPages = totalPages;
 	}
 
-	public ArrayList<MovieFromAPI> getResults() {
+	public ArrayList<MoviePartDeets> getResults() {
 		return results;
 	}
 
-	public void setResults(ArrayList<MovieFromAPI> results) {
+	public void setResults(ArrayList<MoviePartDeets> results) {
 		this.results = results;
 	}
 

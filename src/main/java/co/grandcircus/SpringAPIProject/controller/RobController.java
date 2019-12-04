@@ -29,6 +29,13 @@ public class RobController {
 		return mv;
 	}
 	
+	@RequestMapping("show-movie-details")
+	public ModelAndView showMovieFromResults(int id) {
+		
+		ModelAndView mv = new ModelAndView("movie-details","details");
+		return mv;
+	}
+	
 	
 	
 }

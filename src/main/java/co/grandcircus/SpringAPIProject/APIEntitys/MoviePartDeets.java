@@ -2,7 +2,7 @@ package co.grandcircus.SpringAPIProject.APIEntitys;
 
 import java.util.ArrayList;
 
-public class MovieFromAPI {
+public class MoviePartDeets {
 	private double popularity;
 	private int id;
 	private boolean video;
@@ -18,9 +18,9 @@ public class MovieFromAPI {
 	private String overview;
 	private String poster_path;
 	
-	public MovieFromAPI() {}
+	public MoviePartDeets() {}
 
-	public MovieFromAPI(double popularity, int id, boolean video, int vote_count, double vote_average, String title,
+	public MoviePartDeets(double popularity, int id, boolean video, int vote_count, double vote_average, String title,
 			String release_date, String original_language, String original_title, ArrayList<Integer> genre_ids,
 			String backdrop_path, boolean adult, String overview, String poster_path) {
 		super();
