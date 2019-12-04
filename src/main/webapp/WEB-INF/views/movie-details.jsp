@@ -18,7 +18,7 @@
 
 	${details.release_date }<br>
 	${details.original_language }<br>
-	<img src="${details.poster_path }">
+	<img src="https://image.tmdb.org/t/p/w500/${details.poster_path }">
 
 
 </body>
