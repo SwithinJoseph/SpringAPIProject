@@ -7,16 +7,17 @@ import javax.persistence.Id;
 
 @Entity
 public class WListEntry {
-	
-	@Id 
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	String title;
-	String genre;
-	int year;
-	
-	public WListEntry() {}
+
+	private String title;
+	private String genre;
+	private int year;
+
+	public WListEntry() {
+	}
 
 	public WListEntry(String title, String genre, int year) {
 		super();
@@ -48,5 +49,5 @@ public class WListEntry {
 	public void setYear(int year) {
 		this.year = year;
 	}
-	
+
 }

@@ -13,12 +13,26 @@
 	crossorigin="anonymous">
 </head>
 <body>
-		<h1>Movie Finder!</h1>
-		<form action="/find-movie">
-			<input type="text" name="title" placeholder="Title">
-			<input type="text" name="genre" placeholder="Genre">
-			<input type="number" name="year" placeholder="Year of Release">
-			<input type="submit" value="Find Movie">		
-		</form>
+
+	<div class="container">
+		
+		<h1>Search Results</h1>
+		
+		<table class="table">
+			<tr>
+				<th>Title</th>
+				<th>Genre</th>
+				<th>Year of Release</th>
+
+			</tr>
+			<c:forEach var="r" items="${results.results }">
+			<tr>
+				<td>${r.title }</td>
+				<td>${r.genre}</td>
+				<td>${r.release_date }</td>
+			</tr>
+			</c:forEach>
+		</table>
+
 </body>
 </html>
