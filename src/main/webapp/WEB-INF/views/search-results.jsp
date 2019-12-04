@@ -28,7 +28,6 @@
 			<c:forEach var="r" items="${results.results }">
 			<tr>
 				<td>${r.title }</td>
-				<td>${r.genre}</td>
 				<td>${r.release_date }</td>
 			</tr>
 			</c:forEach>
