@@ -14,7 +14,12 @@
 </head>
 <body>
 
-<h1></h1>
+	<h1>${details.title }</h1>
+
+	${details.release_date }<br>
+	${details.original_language }<br>
+	<img src="${details.poster_path }">
+
 
 </body>
 </html>
