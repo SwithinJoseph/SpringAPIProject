@@ -6,18 +6,38 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link
+<!-- <!-- <link
 	href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/slate/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-FBPbZPVh+7ks5JJ70RJmIaqyGnvMbeJ5JQfEbW0Ac6ErfvEg9yG56JQJuMNptWsH"
-	crossorigin="anonymous">
+	crossorigin="anonymous"> -->
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-		<h1>Movie Finder!</h1>
-		<form action="/find-movie">
-			<input type="text" name="title" placeholder="Title">
-			<input type="number" name="year" placeholder="Year of Release">
-			<input type="submit" value="Find Movie">		
-		</form>
+	<form action="/find-movie">
+		<div class="wrap">
+			<h1>CMDb!</h1>
+			<h3>The Cooler, Movie Database</h3>
+			<div class="search">
+
+				<input type="text" class="searchTerm" name="title"
+					placeholder="Title">
+				<button type="submit" class="searchButton">
+					<i class="fa fa-search"></i>
+				</button>
+			</div>
+
+			<div class="search">
+
+				<input type="text" class="searchTerm" name="year"
+					placeholder="Release Year">
+				<button type="submit" class="searchButton">
+					<i class="fa fa-search"></i>
+				</button>
+			</div>
+		</div>
+	</form>
+
 </body>
 </html>
