@@ -10,5 +10,5 @@ import co.grandcircus.SpringAPIProject.repos.WListRepo;
 @Controller
 public class SwithinController {
 
-	}
+	
 }
