@@ -10,5 +10,5 @@ public class RobController {
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("index");
 		return mv;
-
+	}
 }
