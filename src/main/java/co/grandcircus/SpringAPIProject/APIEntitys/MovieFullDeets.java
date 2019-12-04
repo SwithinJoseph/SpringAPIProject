@@ -22,6 +22,9 @@ public class MovieFullDeets {
 	private ArrayList<SpokenLanguage> spoken_languages;
 	private String status;
 	private String tagline;
+	
+	public MovieFullDeets() {}
+	
 	public MovieFullDeets(double popularity, int id, boolean video, int vote_count, double vote_average, String title,
 			String release_date, String original_language, String original_title, ArrayList<Integer> genre_ids,
 			String backdrop_path, boolean adult, String overview, String poster_path,
