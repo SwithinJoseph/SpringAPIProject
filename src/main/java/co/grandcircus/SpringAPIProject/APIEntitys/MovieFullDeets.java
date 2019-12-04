@@ -162,7 +162,14 @@ public class MovieFullDeets {
 	public void setTagline(String tagline) {
 		this.tagline = tagline;
 	}
-
-	
-	
+	@Override
+	public String toString() {
+		return "MovieFullDeets [popularity=" + popularity + ", id=" + id + ", video=" + video + ", vote_count="
+				+ vote_count + ", vote_average=" + vote_average + ", title=" + title + ", release_date=" + release_date
+				+ ", original_language=" + original_language + ", original_title=" + original_title + ", genre_ids="
+				+ genre_ids + ", backdrop_path=" + backdrop_path + ", adult=" + adult + ", overview=" + overview
+				+ ", poster_path=" + poster_path + ", production_companies=" + production_companies
+				+ ", production_countries=" + production_countries + ", spoken_languages=" + spoken_languages
+				+ ", status=" + status + ", tagline=" + tagline + "]";
+	}
 }
