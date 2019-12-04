@@ -21,7 +21,6 @@
 		<table class="table">
 			<tr>
 				<th>Title</th>
-				<th>Genre</th>
 				<th>Year of Release</th>
 
 			</tr>
