@@ -13,6 +13,11 @@
 	crossorigin="anonymous">
 </head>
 <body>
-
+		<h1>Movie Finder!</h1>
+		<form action="/find-movie">
+			<input type="text" name="title" placeholder="Title">
+			<input type="number" name="year" placeholder="Year of Release">
+			<input type="submit" value="Find Movie">		
+		</form>
 </body>
 </html>
