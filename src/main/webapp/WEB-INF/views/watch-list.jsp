@@ -14,7 +14,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Watchlist:</h1>
+	<h1>CMDb!</h1>
+	<h3>The Cooler, Movie Database</h3>
+	<h4>Watchlist:</h4>
 	<table>
 		<tr>
 			<th>Title</th>

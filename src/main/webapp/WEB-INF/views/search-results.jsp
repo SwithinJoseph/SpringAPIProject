@@ -11,12 +11,15 @@
 	rel="stylesheet"
 	integrity="sha384-pLgJ8jZ4aoPja/9zBSujjzs7QbkTKvKw1+zfKuumQF9U+TH3xv09UUsRI52fS+A6"
 	crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
+			<h1>CMDb!</h1>
+			<h3>The Cooler, Movie Database</h3>
 	<div class="container">
 
-		<h1>Search Results</h1>
+		<h4>Search Results</h4>
 
 		<table class="table">
 			<tr>

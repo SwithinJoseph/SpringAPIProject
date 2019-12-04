@@ -11,14 +11,22 @@
 	rel="stylesheet"
 	integrity="sha384-pLgJ8jZ4aoPja/9zBSujjzs7QbkTKvKw1+zfKuumQF9U+TH3xv09UUsRI52fS+A6"
 	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
 
-	<h1>${details.title }</h1>
+	<h1>CMDb!</h1>
+	<h3>The Cooler, Movie Database</h3>
 
-	${details.release_date }
-	<br> ${details.original_language }
+	<h4>${details.title }</h4>
+
+	Date of Release: ${date }
 	<br>
+
+	<div>
+		Overview: ${details.overview } <br>
+	</div>
 	<img src="https://image.tmdb.org/t/p/w500/${details.poster_path }"
 		height="400">
 
