@@ -40,14 +40,20 @@ public class RobController {
 	
 	@RequestMapping("show-movie-details")
 	public ModelAndView showMovieFromResults(int id) {
-		ModelAndView mv = new ModelAndView("movie-details","details", getMovieByID(id));
+		MovieFullDeets movie = getMovieByID(id);
+		ModelAndView mv = new ModelAndView("movie-details","details", movie);
+		mv.addObject("date",SwithinController.formatDate(movie.getRelease_date()));
 		return mv;
 	}
 	
 	@RequestMapping("add-to-watchlist")
 	public ModelAndView addToWatchlist(int id) {
+		System.out.println("Hello");
+		System.out.println(new WListEntry(getMovieByID(id)));
+		System.out.println("Goodbye");
 		watchlistRepo.save(new WListEntry(getMovieByID(id)));
-		return new ModelAndView("redirect:/show-movie-details");
+		System.out.println("Made it this far");
+		return new ModelAndView("redirect:/show-movie-details?id=" + id);
 	}
 	
 	@RequestMapping("show-watchlist")
