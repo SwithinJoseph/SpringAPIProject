@@ -10,9 +10,5 @@ import co.grandcircus.SpringAPIProject.repos.WListRepo;
 @Controller
 public class SwithinController {
 
-	@RequestMapping("find-movie")
-	public ModelAndView home() {
-		ModelAndView mv = new ModelAndView("index");
-		return mv;
 	}
 }
