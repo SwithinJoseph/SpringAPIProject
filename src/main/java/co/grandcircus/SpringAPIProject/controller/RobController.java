@@ -27,13 +27,11 @@ public class RobController {
 	
 	@RequestMapping("find-movie")
 	public ModelAndView findMovie(String title, Integer year) {
-		System.out.println("This was triggered");
 		String url = "https://api.themoviedb.org/3/search/movie?api_key=00ca39625dd2a729ed49da20319b6e7a&query="
 		+ title
 		+"&year=" + year;
 		SearchResults results = rt.getForObject(url, SearchResults.class);
 		
-		System.out.println(results);
 		ModelAndView mv = new ModelAndView("search-results","results", results);
 		return mv;
 	}
@@ -48,11 +46,7 @@ public class RobController {
 	
 	@RequestMapping("add-to-watchlist")
 	public ModelAndView addToWatchlist(int id) {
-		System.out.println("Hello");
-		System.out.println(new WListEntry(getMovieByID(id)));
-		System.out.println("Goodbye");
 		watchlistRepo.save(new WListEntry(getMovieByID(id)));
-		System.out.println("Made it this far");
 		return new ModelAndView("redirect:/show-movie-details?id=" + id);
 	}
 	
