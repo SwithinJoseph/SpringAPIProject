@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>${details.title }</title>
 <link
 	href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/litera/bootstrap.min.css"
 	rel="stylesheet"
@@ -21,12 +21,20 @@
 
 	<h4>${details.title }</h4>
 
-	Date of Release: ${date }
-	<br>
+	<b>Date of Release:</b> ${date }
+	<br><br>
 
 	<div>
-		Overview: ${details.overview } <br>
-	</div>
+		<b>Overview:</b> ${details.overview } <br>
+	</div><br>
+	
+	<div>
+		<b>Languages:</b><br>
+		<c:forEach var="lang" items="${details.spoken_languages }">
+		${lang.name}<br>
+		</c:forEach>
+	</div><br>
+	
 	<img src="https://image.tmdb.org/t/p/w500/${details.poster_path }"
 		height="400">
 
