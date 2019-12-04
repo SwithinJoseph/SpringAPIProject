@@ -16,46 +16,49 @@ import co.grandcircus.SpringAPIProject.repos.WListRepo;
 @Controller
 public class RobController {
 	RestTemplate rt = new RestTemplate();
-	
+
 	@Autowired
 	WListRepo watchlistRepo;
-	
+
 	@RequestMapping("/")
 	public ModelAndView home() {
 		return new ModelAndView("index");
 	}
-	
+
 	@RequestMapping("find-movie")
 	public ModelAndView findMovie(String title, Integer year) {
-		String url = "https://api.themoviedb.org/3/search/movie?api_key=00ca39625dd2a729ed49da20319b6e7a&query="
-		+ title
-		+"&year=" + year;
+		String url = "https://api.themoviedb.org/3/search/movie?api_key=00ca39625dd2a729ed49da20319b6e7a&query=" + title
+				+ "&year=" + year;
 		SearchResults results = rt.getForObject(url, SearchResults.class);
-		
-		ModelAndView mv = new ModelAndView("search-results","results", results);
+
+		ModelAndView mv = new ModelAndView("search-results", "results", results);
 		return mv;
 	}
-	
+
 	@RequestMapping("show-movie-details")
 	public ModelAndView showMovieFromResults(int id) {
 		MovieFullDeets movie = getMovieByID(id);
-		ModelAndView mv = new ModelAndView("movie-details","details", movie);
-		mv.addObject("date",SwithinController.formatDate(movie.getRelease_date()));
+		ModelAndView mv = new ModelAndView("movie-details", "details", movie);
+		mv.addObject("date", SwithinController.formatDate(movie.getRelease_date()));
 		return mv;
 	}
-	
+
 	@RequestMapping("add-to-watchlist")
 	public ModelAndView addToWatchlist(int id) {
-		watchlistRepo.save(new WListEntry(getMovieByID(id)));
+		if (watchlistRepo.findMovieInWList(id).size() == 0) {
+			watchlistRepo.save(new WListEntry(getMovieByID(id)));
+		} else {
+			System.out.println("Movie already in watchlist!");
+		}
 		return new ModelAndView("redirect:/show-movie-details?id=" + id);
 	}
-	
+
 	@RequestMapping("show-watchlist")
 	public ModelAndView showWatchlist() {
 		List<WListEntry> watchlist = watchlistRepo.findAll();
-		return new ModelAndView("watch-list","watchlist",watchlist);
+		return new ModelAndView("watch-list", "watchlist", watchlist);
 	}
-	
+
 	private MovieFullDeets getMovieByID(int id) {
 		String url = "https://api.themoviedb.org/3/movie/" + id + "?api_key=00ca39625dd2a729ed49da20319b6e7a";
 		return rt.getForObject(url, MovieFullDeets.class);
