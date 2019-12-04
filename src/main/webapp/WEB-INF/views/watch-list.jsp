@@ -13,6 +13,20 @@
 	crossorigin="anonymous">
 </head>
 <body>
-
+	<h1>Watchlist:</h1>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Release year</th>
+			<th>Overview</th>
+		</tr>
+		<c:forEach var="movie" items="${watchlist }">
+			<tr>
+				<td><a href="/show-movie-details?id=${movie.movie_id}">${movie.title}</a></td>
+				<td>${movie.year }</td>
+				<td>${movie.overview }</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>
