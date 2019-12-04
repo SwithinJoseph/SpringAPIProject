@@ -14,7 +14,25 @@
 </head>
 <body>
 
-<h1></h1>
+	<div class="container">
+		
+		<h1>Search Results</h1>
+		
+		<table class="table">
+			<tr>
+				<th>Title</th>
+				<th>Genre</th>
+				<th>Year of Release</th>
+
+			</tr>
+			<c:forEach var="r" items="${results.results }">
+			<tr>
+				<td>${r.title }</td>
+				<td>${r.genre}</td>
+				<td>${r.release_date }</td>
+			</tr>
+			</c:forEach>
+		</table>
 
 </body>
 </html>
