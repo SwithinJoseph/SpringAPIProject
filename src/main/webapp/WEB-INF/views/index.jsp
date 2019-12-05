@@ -37,11 +37,12 @@
 				<button type="submit" class="searchButton">
 					<i class="fa fa-search"></i>
 				</button>
+				
 			</div>
+			<br>
+			<a class="btn btn-primary" href="show-watchlist">View watchlist</a>
+			
 		</div>
 	</form>
-
-
-
 </body>
 </html>
