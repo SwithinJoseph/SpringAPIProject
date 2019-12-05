@@ -11,13 +11,13 @@
 	rel="stylesheet"
 	integrity="sha384-pLgJ8jZ4aoPja/9zBSujjzs7QbkTKvKw1+zfKuumQF9U+TH3xv09UUsRI52fS+A6"
 	crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
+	<div class="marg"></div>
 
-
-			<h1>CMDb!</h1>
-			<h3>The Cooler, Movie Database</h3>
+	<h1>CMDb!</h1>
+	<h3>The Cooler, Movie Database</h3>
 	<div class="container">
 
 		<h4>Search Results</h4>
@@ -35,6 +35,5 @@
 				</tr>
 			</c:forEach>
 		</table>
-		
 </body>
 </html>
