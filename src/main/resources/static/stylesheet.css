@@ -4,6 +4,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+	padding-left: 15px;
+}
+
 .search {
 	width: 100%;
 	position: relative;

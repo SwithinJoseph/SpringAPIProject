@@ -14,13 +14,14 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-	<div class="marg"></div>
 
 	<h1>CMDb!</h1>
 	<h3>The Cooler, Movie Database</h3>
 	<div class="container">
 
 		<h4>Search Results</h4>
+
+
 
 		<table class="table">
 			<tr>
@@ -35,5 +36,6 @@
 				</tr>
 			</c:forEach>
 		</table>
+	</div>
 </body>
 </html>

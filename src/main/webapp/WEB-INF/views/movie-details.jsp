@@ -15,9 +15,10 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-
 	<h1>CMDb!</h1>
 	<h3>The Cooler, Movie Database</h3>
+	<div class="container">
+
 
 	<h4>${details.title }</h4>
 
@@ -54,6 +55,7 @@
 
 		<a class="btn btn-primary" href="/add-to-watchlist?id=${details.id }">Add
 			To Watch List</a>
+	</div>
 	</div>
 
 </body>
