@@ -30,6 +30,7 @@
 		<c:forEach var="genre" items="${genres }">
 		${genre}<br>
 		</c:forEach>
+		<br>
 	</div>
 
 

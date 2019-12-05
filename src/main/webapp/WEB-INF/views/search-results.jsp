@@ -15,6 +15,7 @@
 </head>
 <body>
 
+
 			<h1>CMDb!</h1>
 			<h3>The Cooler, Movie Database</h3>
 	<div class="container">
@@ -34,5 +35,6 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
 </body>
 </html>
