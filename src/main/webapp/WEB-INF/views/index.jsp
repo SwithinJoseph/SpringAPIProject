@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
+	<div id="grad1"></div>
 	<form action="/find-movie">
 		<div class="wrap">
 			<h1>CMDb!</h1>

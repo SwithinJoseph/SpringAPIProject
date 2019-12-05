@@ -22,19 +22,30 @@
 	<h4>${details.title }</h4>
 
 	<b>Date of Release:</b> ${date }
-	<br><br>
+	<br>
+	<br>
+
+	<b>${genreTitle }</b>
+	<div>
+		<c:forEach var="genre" items="${genres }">
+		${genre}<br>
+		</c:forEach>
+	</div>
+
 
 	<div>
 		<b>Overview:</b> ${details.overview } <br>
-	</div><br>
-	
+	</div>
+	<br>
+
 	<div>
 		<b>Languages:</b><br>
 		<c:forEach var="lang" items="${details.spoken_languages }">
 		${lang.name}<br>
 		</c:forEach>
-	</div><br>
-	
+	</div>
+	<br>
+
 	<img src="https://image.tmdb.org/t/p/w500/${details.poster_path }"
 		height="400">
 

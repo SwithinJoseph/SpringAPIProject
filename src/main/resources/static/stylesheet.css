@@ -58,3 +58,28 @@ h3 {
 	font-family: 'Museosans 900', sans-serif;
 	color: #4a4a4a;
 }
+
+h4 {
+	font-family: 'Museosans 900', sans-serif;
+	color: #4a4a4a;
+}
+
+th {
+	text-align: left;
+	font-family: 'Museosans 900', sans-serif;
+	color: #4a4a4a;
+}
+
+td {
+	text-align: left;
+	font-family: 'Museosans 900', sans-serif;
+	color: #4a4a4a;
+}
+
+#grad1 {
+	height: 1000px;
+	background-color: #363636;
+	/* For browsers that do not support gradients */
+	background-image: linear-gradient(to top, #363636, white);
+	/* Standard syntax (must be last) */
+}
