@@ -20,42 +20,38 @@
 	<div class="container">
 
 
-	<h4>${details.title }</h4>
+		<h4>${details.title }</h4>
 
-	<b>Date of Release:</b> ${date }
-	<br>
-	<br>
-
-	<b>${genreTitle }</b>
-	<div>
-		<c:forEach var="genre" items="${genres }">
+		<b>Date of Release:</b> ${date } <br> <br> <b>${genreTitle }</b>
+		<div>
+			<c:forEach var="genre" items="${genres }">
 		${genre}<br>
-		</c:forEach>
+			</c:forEach>
+			<br>
+		</div>
+
+
+		<div>
+			<b>Overview:</b> ${details.overview } <br>
+		</div>
 		<br>
-	</div>
 
-
-	<div>
-		<b>Overview:</b> ${details.overview } <br>
-	</div>
-	<br>
-
-	<div>
-		<b>Languages:</b><br>
-		<c:forEach var="lang" items="${details.spoken_languages }">
+		<div>
+			<b>Languages:</b><br>
+			<c:forEach var="lang" items="${details.spoken_languages }">
 		${lang.name}<br>
-		</c:forEach>
-	</div>
-	<br>
+			</c:forEach>
+		</div>
+		<br> <img
+			src="https://image.tmdb.org/t/p/w500/${details.poster_path }"
+			height="400">
 
-	<img src="https://image.tmdb.org/t/p/w500/${details.poster_path }"
-		height="400">
+		<div>
 
-	<div>
-
-		<a class="btn btn-primary" href="/add-to-watchlist?id=${details.id }">Add
-			To Watch List</a>
-	</div>
+			<a class="btn btn-primary" href="/add-to-watchlist?id=${details.id }">Add
+				To Watch List</a> 
+			<a class="btn btn-primary" href="/">Back To Search</a>
+		</div>
 	</div>
 
 </body>
