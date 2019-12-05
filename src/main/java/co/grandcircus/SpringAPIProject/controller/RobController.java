@@ -1,5 +1,6 @@
 package co.grandcircus.SpringAPIProject.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.grandcircus.SpringAPIProject.APIEntitys.MovieFullDeets;
+import co.grandcircus.SpringAPIProject.APIEntitys.GenreResults;
 import co.grandcircus.SpringAPIProject.APIEntitys.SearchResults;
 import co.grandcircus.SpringAPIProject.repos.WListEntry;
 import co.grandcircus.SpringAPIProject.repos.WListRepo;
@@ -19,9 +21,16 @@ public class RobController {
 
 	@Autowired
 	WListRepo watchlistRepo;
+	
+	GenreResults genres;
 
 	@RequestMapping("/")
 	public ModelAndView home() {
+		if (genres==null) {
+			String url = " https://api.themoviedb.org/3/genre/movie/list?api_key=00ca39625dd2a729ed49da20319b6e7a&language=en-US";
+			genres=rt.getForObject(url, GenreResults.class);
+			genres.initGenreMap();
+		}
 		return new ModelAndView("index");
 	}
 
@@ -39,6 +48,13 @@ public class RobController {
 	public ModelAndView showMovieFromResults(int id) {
 		MovieFullDeets movie = getMovieByID(id);
 		ModelAndView mv = new ModelAndView("movie-details", "details", movie);
+
+		ArrayList<String> genreStrings = new ArrayList<>();
+		for (int i : movie.getGenre_ids()) {
+			genreStrings.add(genres.getGenreById(i));
+		}
+		mv.addObject("genres", genreStrings);
+		
 		mv.addObject("date", SwithinController.formatDate(movie.getRelease_date()));
 		return mv;
 	}
