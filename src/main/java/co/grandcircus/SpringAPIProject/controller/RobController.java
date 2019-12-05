@@ -58,18 +58,39 @@ public class RobController {
 
 	@RequestMapping("add-to-watchlist")
 	public ModelAndView addToWatchlist(int id) {
+		WListEntry entry = new WListEntry(getMovieByID(id));
+		System.out.println(watchlistRepo.findMovieInWList(id));
 		if (watchlistRepo.findMovieInWList(id).size() == 0) {
-			watchlistRepo.save(new WListEntry(getMovieByID(id)));
+			watchlistRepo.save(entry);
+			return showWListConfirmation(id, entry.getTitle(), false);
 		} else {
-			System.out.println("Movie already in watchlist!");
+			return showWListConfirmation(id, entry.getTitle(), true);
 		}
-		return new ModelAndView("redirect:/show-movie-details?id=" + id);
+		//return new ModelAndView("redirect:/show-movie-details?id=" + id);
 	}
 
 	@RequestMapping("show-watchlist")
 	public ModelAndView showWatchlist() {
 		List<WListEntry> watchlist = watchlistRepo.findAll();
 		return new ModelAndView("watch-list", "watchlist", watchlist);
+	}
+	
+	@RequestMapping("delete-from-watchlist")
+	public ModelAndView deleteFromWatchlist(int listId){
+		watchlistRepo.deleteById(listId);
+		return new ModelAndView("redirect:/show-watchlist");
+	}
+	
+	@RequestMapping("show-wlist-confirmation")
+	public ModelAndView showWListConfirmation(int movieId, String movieTitle, boolean alreadyInList){
+		ModelAndView mv = new ModelAndView("watch-list-confirmation");
+		
+		String message = alreadyInList ? movieTitle + " is already in your watchlist!" : "Successfully added " + movieTitle + "!";
+		mv.addObject("message", message);
+		
+		mv.addObject("id", movieId);
+		
+		return mv;
 	}
 
 	private MovieFullDeets getMovieByID(int id) {
