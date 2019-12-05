@@ -12,7 +12,7 @@ public class MovieFullDeets {
 	private String release_date;
 	private String original_language;
 	private String original_title;
-	private ArrayList<Integer> genre_ids;
+	private ArrayList<Genre> genres;
 	private String backdrop_path;
 	private boolean adult;
 	private String overview;
@@ -26,7 +26,7 @@ public class MovieFullDeets {
 	public MovieFullDeets() {}
 	
 	public MovieFullDeets(double popularity, int id, boolean video, int vote_count, double vote_average, String title,
-			String release_date, String original_language, String original_title, ArrayList<Integer> genre_ids,
+			String release_date, String original_language, String original_title, ArrayList<Genre> genres,
 			String backdrop_path, boolean adult, String overview, String poster_path,
 			ArrayList<ProdCoPartDeets> production_companies, ArrayList<ProdCountry> production_countries,
 			ArrayList<SpokenLanguage> spoken_languages, String status, String tagline) {
@@ -40,7 +40,7 @@ public class MovieFullDeets {
 		this.release_date = release_date;
 		this.original_language = original_language;
 		this.original_title = original_title;
-		this.genre_ids = genre_ids;
+		this.genres = genres;
 		this.backdrop_path = backdrop_path;
 		this.adult = adult;
 		this.overview = overview;
@@ -105,11 +105,11 @@ public class MovieFullDeets {
 	public void setOriginal_title(String original_title) {
 		this.original_title = original_title;
 	}
-	public ArrayList<Integer> getGenre_ids() {
-		return genre_ids;
+	public ArrayList<Genre> getGenres() {
+		return genres;
 	}
-	public void setGenre_ids(ArrayList<Integer> genre_ids) {
-		this.genre_ids = genre_ids;
+	public void setGenres(ArrayList<Genre> genres) {
+		this.genres = genres;
 	}
 	public String getBackdrop_path() {
 		return backdrop_path;
@@ -170,7 +170,7 @@ public class MovieFullDeets {
 		return "MovieFullDeets [popularity=" + popularity + ", id=" + id + ", video=" + video + ", vote_count="
 				+ vote_count + ", vote_average=" + vote_average + ", title=" + title + ", release_date=" + release_date
 				+ ", original_language=" + original_language + ", original_title=" + original_title + ", genre_ids="
-				+ genre_ids + ", backdrop_path=" + backdrop_path + ", adult=" + adult + ", overview=" + overview
+				+ genres + ", backdrop_path=" + backdrop_path + ", adult=" + adult + ", overview=" + overview
 				+ ", poster_path=" + poster_path + ", production_companies=" + production_companies
 				+ ", production_countries=" + production_countries + ", spoken_languages=" + spoken_languages
 				+ ", status=" + status + ", tagline=" + tagline + "]";
